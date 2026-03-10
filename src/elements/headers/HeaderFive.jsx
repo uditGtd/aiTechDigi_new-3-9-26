@@ -52,19 +52,19 @@ const pagesList = [
 
 // --- STYLES FOR SCROLLABLE DROPDOWN ---
 const dropdownScrollStyle = {
-    maxHeight: "300px",
-    overflowY: "auto",
-    overflowX: "hidden",
-    paddingRight: "5px",
-    
+  maxHeight: "300px",
+  overflowY: "auto",
+  overflowX: "hidden",
+  paddingRight: "5px",
+
 };
 
 const dropdownLinkStyle = {
-    fontSize: "16px", // Thoda adjust kiya taaki fit ho
-    padding: "8px 15px",
-    paddingLeft:"40px",
-    lineHeight: "1.4",
-    display: "block"
+  fontSize: "16px", // Thoda adjust kiya taaki fit ho
+  padding: "8px 15px",
+  paddingLeft: "40px",
+  lineHeight: "1.4",
+  display: "block"
 };
 
 
@@ -72,7 +72,7 @@ function HeaderFive() {
 
   // gsap animation 
   useGSAP(() => {
-    
+
     var menuToggle = document.getElementById("menuToggle");
     var menuToggle2 = document.getElementById("menuToggle2");
 
@@ -178,44 +178,44 @@ function HeaderFive() {
                   <ul id="main-nav" className="nav navbar-nav clearfix">
 
                     {/* --- UPDATED MENU DATA HERE --- */}
-                    
+
                     {/* HOME */}
                     <li>
-                        <NavLink to="/">Home</NavLink>
+                      <NavLink to="/">Home</NavLink>
                     </li>
 
                     {/* ABOUT */}
                     <li>
-                        <NavLink to="/about">About</NavLink>
+                      <NavLink to="/about">About</NavLink>
                     </li>
 
                     {/* SERVICES DROPDOWN */}
                     <li className="dropdown">
-                        <NavLink to="/services">Services</NavLink>
-                        <ul className="dropdown-menu clearfix" style={dropdownScrollStyle}>
-                            {servicesList.map((item, index) => (
-                                <li key={index}>
-                                    <NavLink to={item.link} style={dropdownLinkStyle}>{item.name}</NavLink>
-                                </li>
-                            ))}
-                        </ul>
+                      <NavLink to="/services">Services</NavLink>
+                      <ul className="dropdown-menu clearfix" style={dropdownScrollStyle}>
+                        {servicesList.map((item, index) => (
+                          <li key={index}>
+                            <NavLink to={item.link} style={dropdownLinkStyle}>{item.name}</NavLink>
+                          </li>
+                        ))}
+                      </ul>
                     </li>
 
                     {/* PAGES DROPDOWN */}
                     <li className="dropdown">
-                        <NavLink to="/project">Pages</NavLink>
-                        <ul className="dropdown-menu clearfix" style={dropdownScrollStyle}>
-                            {pagesList.map((item, index) => (
-                                <li key={index}>
-                                    <NavLink to={item.link} style={dropdownLinkStyle}>{item.name}</NavLink>
-                                </li>
-                            ))}
-                        </ul>
+                      <NavLink to="/project">Pages</NavLink>
+                      <ul className="dropdown-menu clearfix" style={dropdownScrollStyle}>
+                        {pagesList.map((item, index) => (
+                          <li key={index}>
+                            <NavLink to={item.link} style={dropdownLinkStyle}>{item.name}</NavLink>
+                          </li>
+                        ))}
+                      </ul>
                     </li>
 
                     {/* CONTACT */}
                     <li>
-                        <NavLink to="/contact">Contact</NavLink>
+                      <NavLink to="/contact">Contact</NavLink>
                     </li>
 
                   </ul>
@@ -231,7 +231,7 @@ function HeaderFive() {
           </div>
         </div>
       </header>
-      
+
 
       {/* header mobile */}
       <div className="fullpage-menu">
@@ -246,7 +246,7 @@ function HeaderFive() {
             <Link to="/"
               className="menu-logo d-block"
             >
-              <img src={logo2} alt="" height={50}/>
+              <img src={logo2} alt="" height={50} />
             </Link>
             <FontAwesomeIcon
               id="menuToggle2"
@@ -254,7 +254,7 @@ function HeaderFive() {
               icon={faTimes}
             />
           </div>
-
+          {/* 
           <div className="mobile-search-bar">
             <form>
               <input type="text" name="search" placeholder="Keywords" />
@@ -262,54 +262,54 @@ function HeaderFive() {
                 <FontAwesomeIcon icon={faSearch} />
               </button>
             </form>
-          </div>
+          </div> */}
 
           <div className="fullpage-content-wrap">
 
             <nav className="mobile-main-navigation  clearfix ul-li">
-                <ul id="m-main-nav" className="nav navbar-nav clearfix">
-                    
-                    {/* --- MOBILE UPDATED DATA --- */}
+              <ul id="m-main-nav" className="nav navbar-nav clearfix">
 
-                    {/* HOME */}
-                    <li><NavLink to="/">Home</NavLink></li>
+                {/* --- MOBILE UPDATED DATA --- */}
 
-                    {/* ABOUT */}
-                    <li><NavLink to="/about">About</NavLink></li>
+                {/* HOME */}
+                <li><NavLink to="/">Home</NavLink></li>
 
-                    {/* SERVICES DROPDOWN MOBILE */}
-                    <li className="dropdown" onClick={(e) => handleMobMenu(e)}>
-                        <span>Services</span>
-                        <div className="dropdown-btn">
-                            <FontAwesomeIcon icon={faCaretRight} />
-                        </div>
-                        <ul className="dropdown-menu clearfix">
-                             {servicesList.map((item, index) => (
-                                <li key={index}>
-                                    <NavLink to={item.link}>{item.name}</NavLink>
-                                </li>
-                            ))}
-                        </ul>
-                    </li>
+                {/* ABOUT */}
+                <li><NavLink to="/about">About</NavLink></li>
 
-                    {/* PAGES DROPDOWN MOBILE */}
-                    <li className="dropdown" onClick={(e) => handleMobMenu(e)}>
-                        <span>Pages</span>
-                         <div className="dropdown-btn">
-                            <FontAwesomeIcon icon={faCaretRight} />
-                        </div>
-                        <ul className="dropdown-menu clearfix">
-                             {pagesList.map((item, index) => (
-                                <li key={index}>
-                                    <NavLink to={item.link}>{item.name}</NavLink>
-                                </li>
-                            ))}
-                        </ul>
-                    </li>
+                {/* SERVICES DROPDOWN MOBILE */}
+                <li className="dropdown" onClick={(e) => handleMobMenu(e)}>
+                  <span>Services</span>
+                  <div className="dropdown-btn">
+                    <FontAwesomeIcon icon={faCaretRight} />
+                  </div>
+                  <ul className="dropdown-menu clearfix">
+                    {servicesList.map((item, index) => (
+                      <li key={index}>
+                        <NavLink to={item.link}>{item.name}</NavLink>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
 
-                    {/* CONTACT */}
-                    <li><NavLink to="/contact">Contact</NavLink></li>
-                    
+                {/* PAGES DROPDOWN MOBILE */}
+                <li className="dropdown" onClick={(e) => handleMobMenu(e)}>
+                  <span>Pages</span>
+                  <div className="dropdown-btn">
+                    <FontAwesomeIcon icon={faCaretRight} />
+                  </div>
+                  <ul className="dropdown-menu clearfix">
+                    {pagesList.map((item, index) => (
+                      <li key={index}>
+                        <NavLink to={item.link}>{item.name}</NavLink>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+
+                {/* CONTACT */}
+                <li><NavLink to="/contact">Contact</NavLink></li>
+
               </ul>
             </nav>
 
@@ -371,24 +371,27 @@ function HeaderFive() {
           {/* social media */}
           <ul className="full-page-socail-link text-center pt-50">
             <li>
-              <Link>
+              <a href="https://www.facebook.com/gotechdigi/" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faFacebookF} />
-              </Link>
+              </a>
             </li>
+
             <li>
-              <Link>
+              <a href="https://www.instagram.com/accounts/login/?next=%2Fgotechdigi&source=omni_redirect" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faInstagram} />
-              </Link>
+              </a>
             </li>
+
             <li>
-              <Link>
+              <a href="https://in.linkedin.com/company/gotechdigi" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faLinkedinIn} />
-              </Link>
+              </a>
             </li>
+
             <li>
-              <Link>
+              <a href="https://www.youtube.com/@gotech_digi" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faYoutube} />
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

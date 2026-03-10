@@ -8,6 +8,7 @@ import {
   faSearch,
   faAngleLeft,
   faAngleDown,
+  faCaretRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -59,6 +60,7 @@ const pagesList = [
   { name: "Our Clients", link: "/our-clients" },
   { name: "Prices", link: "/pricing" },
   { name: "Process", link: "/process" },
+  { name: "Blogs", link: "/blog" },
 ];
 
 // --- STYLES ---
@@ -154,6 +156,12 @@ function HeaderTwo() {
       menubgline.reversed(!menubgline.reversed());
     });
   });
+
+  // handle mobile dropdown menu toggle
+  const handleMobMenu = (e) => {
+    const dropdown = e.currentTarget;
+    dropdown.classList.toggle("active");
+  }
 
   const [btnActive, setBtnActive] = useState(false)
 
@@ -283,25 +291,30 @@ function HeaderTwo() {
                     </li>
                     
                     {/* MOBILE SERVICES */}
-                    <li className="dropdown menu-item-has-children">
-                        <NavLink to="/services">Services</NavLink>
-                        {/* Mobile me usually scroll height fix nahi karte, but font small kar diya hai */}
+                    <li className="dropdown" onClick={(e) => handleMobMenu(e)}>
+                        <span>Services</span>
+                        <div className="dropdown-btn">
+                            <FontAwesomeIcon icon={faCaretRight} />
+                        </div>
                         <ul className="dropdown-menu clearfix">
                             {servicesList.map((item, index) => (
                                 <li key={index}>
-                                    <Link to={item.link} style={{ fontSize: '14px' }}>{item.name}</Link>
+                                    <NavLink to={item.link}>{item.name}</NavLink>
                                 </li>
                             ))}
                         </ul>
                     </li>
 
                     {/* MOBILE PAGES */}
-                    <li className="dropdown menu-item-has-children">
-                        <NavLink to="/project">Pages</NavLink>
+                    <li className="dropdown" onClick={(e) => handleMobMenu(e)}>
+                        <span>Pages</span>
+                        <div className="dropdown-btn">
+                            <FontAwesomeIcon icon={faCaretRight} />
+                        </div>
                         <ul className="dropdown-menu clearfix">
                             {pagesList.map((item, index) => (
                                 <li key={index}>
-                                    <Link to={item.link} style={{ fontSize: '14px' }}>{item.name}</Link>
+                                    <NavLink to={item.link}>{item.name}</NavLink>
                                 </li>
                             ))}
                         </ul>
@@ -345,10 +358,26 @@ function HeaderTwo() {
           </div>
           
           <ul className="full-page-socail-link text-center pt-50">
-            <li><Link><FontAwesomeIcon icon={faFacebookF} /></Link></li>
-            <li><Link><FontAwesomeIcon icon={faInstagram} /></Link></li>
-            <li><Link><FontAwesomeIcon icon={faLinkedinIn} /></Link></li>
-            <li><Link><FontAwesomeIcon icon={faYoutube} /></Link></li>
+            <li>
+              <a href="https://www.facebook.com/gotechdigi/" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faFacebookF} />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/accounts/login/?next=%2Fgotechdigi&source=omni_redirect" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+            </li>
+            <li>
+              <a href="https://in.linkedin.com/company/gotechdigi" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faLinkedinIn} />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@gotech_digi" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faYoutube} />
+              </a>
+            </li>
           </ul>
 
         </div>
