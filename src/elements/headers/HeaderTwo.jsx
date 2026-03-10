@@ -284,7 +284,7 @@ function HeaderTwo() {
                 <ul id="m-main-nav" className="nav navbar-nav clearfix">
                     
                     <li>
-                        <NavLink to="/home">Home</NavLink>
+                        <NavLink to="/">Home</NavLink>
                     </li>
                     <li>
                         <NavLink to="/about">About</NavLink>
