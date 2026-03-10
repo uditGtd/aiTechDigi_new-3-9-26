@@ -359,8 +359,8 @@
             }
 
             @media #{$xs} {
-                height: 60vh; // ✅ ONLY MOBILE
-                max-height: none; // safety
+                height: 340px;
+                max-height: 340px;
                 width: auto; // maintain aspect ratio
             }
         }
