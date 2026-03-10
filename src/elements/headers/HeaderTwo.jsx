@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import logo2 from "../../assets/img/logo/new.png";
+import logo2 from "../../assets/img/logo/ai-tech-logo-white.png";
 import img1 from "../../assets/img/project/p1-img-1.png";
 import img2 from "../../assets/img/project/p1-img-2.png";
 import img3 from "../../assets/img/project/p1-img-3.png";
@@ -261,7 +261,7 @@ function HeaderTwo() {
             <Link
               className="menu-logo d-block"
             >
-              <img src={logo2} alt="" />
+              <img src={logo2} alt="" height={50}/>
             </Link>
             <FontAwesomeIcon
               id="menuToggle2"
