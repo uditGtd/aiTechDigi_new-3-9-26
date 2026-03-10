@@ -198,7 +198,7 @@ const data = [
                             <p className="chy-para-1 disc">{item.desc}</p>
 
                             <div className="btn-wrap">
-                                <Link to="/career-details" className="chy-pr-btn-1 ">
+                                <Link to="/contact" className="chy-pr-btn-1 ">
                                     <span className="text">
                                         job apply
                                     </span>
